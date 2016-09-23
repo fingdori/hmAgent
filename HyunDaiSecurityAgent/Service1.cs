@@ -23,6 +23,7 @@ namespace HyunDaiSecurityAgent
 
         protected override void OnStart(string[] args)
         {
+            System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory +  "startHyunDai.txt");
             EventBinding eventBinding = new EventBinding();
             eventBinding.Run();
         }

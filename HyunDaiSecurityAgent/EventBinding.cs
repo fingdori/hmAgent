@@ -17,7 +17,7 @@ namespace HyunDaiSecurityAgent
         static String host = "192.168.1.200";
         static int port = 514;
         static UTF8Encoding _encoding = new UTF8Encoding();
-        private EventLog _localLog;
+        static EventLog _localLog = new EventLog("Application", ".", "HyunDai Log Agent");
 
         public void Run()
         {
@@ -28,7 +28,9 @@ namespace HyunDaiSecurityAgent
 
             try
             {
-                _localLog = new EventLog("Application", ".", "HyunDai Log Agent");
+                
+                _localLog.WriteEntry("start HyunDae Application!!!", EventLogEntryType.Information);
+                //System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app start!!");
                 EventLogQuery eventsQuery = new EventLogQuery(logName,
                     PathType.LogName, queryString);
 
@@ -53,11 +55,18 @@ namespace HyunDaiSecurityAgent
             {
                 Console.WriteLine("Error reading the log: {0}", e.Message);
                 _localLog.WriteEntry(e.ToString(), EventLogEntryType.Error);
+                System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app 11111!!");
             }
             catch (UnauthorizedAccessException uae)
             {
                 Console.WriteLine("UnauthorizedAccessException occur log: {0}", uae.Message);
                 _localLog.WriteEntry(uae.ToString(), EventLogEntryType.Error);
+                System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app 2222222!!");
+            }
+            catch (Exception ee)
+            {
+                Console.WriteLine("error : " + ee.ToString());
+                _localLog.WriteEntry(ee.ToString(), EventLogEntryType.Error);
             }
             finally
             {
@@ -129,6 +138,7 @@ namespace HyunDaiSecurityAgent
 
         static async void portableSyslogUdpSend(String host, int port, String msg)
         {
+            _localLog.WriteEntry("HyunDae send Udp data!!!", EventLogEntryType.Information);
 
             var process = Process.GetCurrentProcess();
             SyslogRfc5424MessageSerializer syslogRfc5424MessageSerializerUtf8 = new SyslogRfc5424MessageSerializer(Encoding.UTF8);
