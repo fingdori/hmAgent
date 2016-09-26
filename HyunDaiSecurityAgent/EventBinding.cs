@@ -39,7 +39,7 @@ namespace HyunDaiSecurityAgent
 
                 watcher.EventRecordWritten +=
                         new EventHandler<EventRecordWrittenEventArgs>(
-                            EventLogEventRead);
+                            EventLogCallback);
 
                 // Begin subscribing to events the events
                 watcher.Enabled = true;
@@ -82,7 +82,7 @@ namespace HyunDaiSecurityAgent
         }
 
         // 로그온/오프 이벤트 핸들러
-        static void EventLogEventRead(object obj,
+        static void EventLogCallback(object obj,
             EventRecordWrittenEventArgs arg)
         {
             if (arg.EventRecord != null)
@@ -126,14 +126,6 @@ namespace HyunDaiSecurityAgent
                 }
             }
             portableSyslogUdpSend(host, port, xmlString);
-        }
-
-        public static void testfunc(Exception e)
-        {
-            if (e != null)
-            {
-                Console.WriteLine(e.ToString());
-            }
         }
 
         static async void portableSyslogUdpSend(String host, int port, String msg)

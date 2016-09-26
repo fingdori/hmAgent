@@ -23,11 +23,11 @@ namespace HyunDaiSecurityAgent
             ThreadStart threadStart = new ThreadStart(eventBinding.Run);
             thread = new Thread(threadStart);
             thread.Start();
-            System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory +  "startHyunDai.txt");
         }
 
         protected override void OnStop()
         {
+            thread.Abort();
         }
     }
 }
