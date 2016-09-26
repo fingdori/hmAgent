@@ -137,7 +137,7 @@ namespace HyunDaiSecurityAgent
             hostName: process.MachineName,
             procId: process.Id.ToString(),
             appName: process.ProcessName,
-            msgId: "Hello",
+            msgId: "hyundai motors security log",
             message: msg);
 
             try
