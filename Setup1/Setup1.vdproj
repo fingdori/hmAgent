@@ -2811,7 +2811,7 @@
         "Subject" = "8:"
         "ARPCONTACT" = "8:shbak"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:사용자의 PC를 보고하기 위해 비정상적인 행위에 대한 로그를 보안 담당자에게 전송합니다."
+        "ARPCOMMENTS" = "8:사용자의 PC를 보호하기 위해 비정상적인 행위에 대한 로그를 보안 담당자에게 전송합니다."
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
