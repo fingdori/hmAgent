@@ -91,8 +91,6 @@ namespace HyunDaiSecurityAgent
             if (arg.EventRecord != null)
             {
                 String xmlString = arg.EventRecord.ToXml();
-                Console.WriteLine("==================================== Log on/off Event Occur ======================================");
-                Console.WriteLine("Event XML : {0}", xmlString);
                 byte[] data = _encoding.GetBytes(xmlString);
                 portableSyslogUdpSend(host, port, xmlString);
             }
@@ -105,7 +103,6 @@ namespace HyunDaiSecurityAgent
         // IP 변경에 대한 이벤트 핸들러
         static void AddressChangedCallback(object sender, EventArgs e)
         {
-            Console.WriteLine("==================================== Network Change Event Occur ======================================");
             String xmlString = "<event><description>network interface change event occur</description>";
             byte[] data = _encoding.GetBytes(xmlString);
             NetworkInterface[] nts = NetworkInterface.GetAllNetworkInterfaces();
@@ -119,10 +116,8 @@ namespace HyunDaiSecurityAgent
                     {
                         if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
                         {
-                            Console.WriteLine(ip.Address.ToString());
-                            Console.WriteLine(ni.GetPhysicalAddress().ToString());
                             xmlString += "<ip>" + ip.Address.ToString() + "</ip>";
-                            xmlString += "<mac>" + ip.Address.ToString() + "</mac>";
+                            xmlString += "<mac>" + ni.GetPhysicalAddress().ToString() + "</mac>";
                             xmlString += "</event>";
                         }
                     }
@@ -132,9 +127,7 @@ namespace HyunDaiSecurityAgent
         }
 
         static async void portableSyslogUdpSend(String host, int port, String msg)
-        {
-            _localLog.WriteEntry("HyunDae send Udp data!!!", EventLogEntryType.Information);
-
+        {        
             var process = Process.GetCurrentProcess();
             SyslogRfc5424MessageSerializer syslogRfc5424MessageSerializerUtf8 = new SyslogRfc5424MessageSerializer(Encoding.UTF8);
 
@@ -147,33 +140,20 @@ namespace HyunDaiSecurityAgent
             msgId: "Hello",
             message: msg);
 
-            // asynchronous communication because of performance
-            using (var sender = new AsyncSyslogUdpSender(host, port))
+            try
             {
-                await sender.ConnectAsync();
-                await sender.SendAsync(message, syslogRfc5424MessageSerializerUtf8);
-                await sender.DisconnectAsync();
+                // asynchronous communication because of performance
+                using (var sender = new AsyncSyslogUdpSender(host, port))
+                {
+                    await sender.ConnectAsync();
+                    await sender.SendAsync(message, syslogRfc5424MessageSerializerUtf8);
+                    await sender.DisconnectAsync();
+                }
             }
-        }
+            catch (Exception e) {
+                _localLog.WriteEntry("upd send error : " + e.ToString(), EventLogEntryType.Error);
+            }
 
-        //// UDP send TEST for debugging
-        //static void sendUdp(String ip, int port, byte[] data)
-        //{
-        //    try
-        //    {
-        //        _udpClient = new UdpClient();
-        //        _udpClient.Connect(host, port);
-        //        _udpClient.Send(data, data.Length);
-        //        _udpClient.Close();
-        //    }
-        //    catch (SocketException se)
-        //    {
-        //        Console.WriteLine(se.ToString());
-        //    }
-        //    catch (NullReferenceException ne)
-        //    {
-        //        Console.WriteLine(ne.ToString());
-        //    }
-        //}
+        }
     }
 }

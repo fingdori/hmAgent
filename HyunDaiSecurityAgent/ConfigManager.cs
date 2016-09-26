@@ -15,6 +15,7 @@ namespace HyunDaiSecurityAgent
         private static int _port;
         private static String _configFilePath = AppDomain.CurrentDomain.BaseDirectory + "conf" + Path.DirectorySeparatorChar + "config.xml";
         static EventLog _localLog = LogManager.getLocalLog();
+        static String defaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>"; 
 
         public static void initConf() {
 #if DEBUG
@@ -27,19 +28,34 @@ namespace HyunDaiSecurityAgent
             XmlDocument xd = new XmlDocument();
             // read xml file
             // C#에서는 xml파일을 이용해서 data를 read/write하는 것이 기본적인 방식임 (System.Xml)
+            XmlNodeList xmlNodeListIp;
+            XmlNodeList xmlNodeListPort;
+
             if (System.IO.File.Exists(_configFilePath)) {
                 xd.Load(_configFilePath);
-                XmlNodeList xmlNodeListIp = xd.GetElementsByTagName("ip");
-                XmlNodeList xmlNodeListPort = xd.GetElementsByTagName("port");
+                xmlNodeListIp = xd.GetElementsByTagName("ip");
+                xmlNodeListPort = xd.GetElementsByTagName("port");
+
                 //  validation check
-                if (xmlNodeListIp.Count == 1 && xmlNodeListPort.Count == 1) {
+                if (xmlNodeListIp.Count == 1 && xmlNodeListPort.Count == 1)
+                {
                     _ip = xmlNodeListIp[0].InnerText.Replace("\r\n", "").Trim();
                     _port = Int32.Parse(xmlNodeListPort[0].InnerText.Replace("\r\n", "").Trim());
                 }
+                else {
+                    // error log write
+                    _localLog.WriteEntry("config xml element count error (# of ip element : " + xmlNodeListIp.Count
+                        + " # of port element : " + xmlNodeListPort.Count + ")", EventLogEntryType.Error);
+                }
             } else {
-                System.IO.File.Create(_configFilePath);
+                StreamWriter sw = File.CreateText(_configFilePath);
+                sw.WriteLine(defaultConfigXmlString);
                 // setting default value
-                _localLog.WriteEntry("no config file in file path : " + _configFilePath, EventLogEntryType.Error);
+                _localLog.WriteEntry("no config file in file path : " + _configFilePath 
+                    + "ip and port will be default setting(ip: 0.0.0.0, port: 0)", EventLogEntryType.Error);
+                // default setting
+                _ip = "0.0.0.0";
+                _port = 0;
             }
         }
 
