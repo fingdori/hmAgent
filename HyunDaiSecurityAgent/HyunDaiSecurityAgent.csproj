@@ -66,6 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogManager.cs" />
+    <Compile Include="ConfigManager.cs" />
     <Compile Include="EventBinding.cs" />
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>

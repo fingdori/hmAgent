@@ -18,7 +18,7 @@ namespace HyunDaiSecurityAgent
         static String host = "192.168.1.200";
         static int port = 514;
         static UTF8Encoding _encoding = new UTF8Encoding();
-        static EventLog _localLog = new EventLog("Application", ".", "HyunDai Log Agent");
+        static EventLog _localLog = LogManager.getLocalLog();
 
         public void Run()
         {
@@ -29,7 +29,10 @@ namespace HyunDaiSecurityAgent
 
             try
             {
-                
+                ConfigManager.initConf();
+                host = ConfigManager.getIp();
+                port = ConfigManager.getPort();
+
                 _localLog.WriteEntry("start HyunDae Application!!!", EventLogEntryType.Information);
                 //System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app start!!");
                 EventLogQuery eventsQuery = new EventLogQuery(logName,
