@@ -812,6 +812,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -836,6 +844,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -2778,7 +2794,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:SecurityLogSender"
+        "ProductName" = "8:HyunDai Security Log Sender"
         "ProductCode" = "8:{64B6526F-D7CB-4F2C-A911-CB2591B6E2C7}"
         "PackageCode" = "8:{410DC7EC-106B-4218-B272-C1D58A4A88DC}"
         "UpgradeCode" = "8:{C31A4CBE-A352-4349-B1D0-4F7FB71EFC6D}"
@@ -2793,7 +2809,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:HyunDai Security Log Sender"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:HyunDaiSoftware"
+        "ARPCONTACT" = "8:shbak"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:사용자의 PC를 보고하기 위해 비정상적인 행위에 대한 로그를 보안 담당자에게 전송합니다."
         "ARPURLINFOABOUT" = "8:"
@@ -3301,7 +3317,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_58E13EB3B7EC45F68A486CD88449B58C"
             {
-            "SourcePath" = "8:\\\\Mac\\Home\\Desktop\\c_#\\src\\HyunDaiSecurityAgent\\HyunDaiSecurityAgent\\obj\\Debug\\HyunDaiSecurityAgent.exe"
+            "SourcePath" = "8:\\\\Mac\\Home\\Desktop\\c_#\\src\\HyunDaiSecurityAgent\\HyunDaiSecurityAgent\\obj\\Release\\HyunDaiSecurityAgent.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
