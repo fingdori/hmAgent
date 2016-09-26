@@ -14,6 +14,7 @@ namespace HyunDaiSecurityAgent
     class EventBinding
     {
         static UdpClient _udpClient;
+        // TODO : host와 port는 config file을 통해서 받아오도록 수정 필요
         static String host = "192.168.1.200";
         static int port = 514;
         static UTF8Encoding _encoding = new UTF8Encoding();
@@ -90,8 +91,6 @@ namespace HyunDaiSecurityAgent
                 Console.WriteLine("==================================== Log on/off Event Occur ======================================");
                 Console.WriteLine("Event XML : {0}", xmlString);
                 byte[] data = _encoding.GetBytes(xmlString);
-
-                //sendUdp(host, port, data);
                 portableSyslogUdpSend(host, port, xmlString);
             }
             else
@@ -104,11 +103,8 @@ namespace HyunDaiSecurityAgent
         static void AddressChangedCallback(object sender, EventArgs e)
         {
             Console.WriteLine("==================================== Network Change Event Occur ======================================");
-            String xmlString = "<data>network interface change event occur</data>";
+            String xmlString = "<event><description>network interface change event occur</description>";
             byte[] data = _encoding.GetBytes(xmlString);
-            //sendUdp(host, port, data);
-            portableSyslogUdpSend(host, port, xmlString);
-
             NetworkInterface[] nts = NetworkInterface.GetAllNetworkInterfaces();
 
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
@@ -122,10 +118,14 @@ namespace HyunDaiSecurityAgent
                         {
                             Console.WriteLine(ip.Address.ToString());
                             Console.WriteLine(ni.GetPhysicalAddress().ToString());
+                            xmlString += "<ip>" + ip.Address.ToString() + "</ip>";
+                            xmlString += "<mac>" + ip.Address.ToString() + "</mac>";
+                            xmlString += "</event>";
                         }
                     }
                 }
             }
+            portableSyslogUdpSend(host, port, xmlString);
         }
 
         public static void testfunc(Exception e)
@@ -161,7 +161,7 @@ namespace HyunDaiSecurityAgent
             }
         }
 
-        //// UDP send
+        //// UDP send TEST for debugging
         //static void sendUdp(String ip, int port, byte[] data)
         //{
         //    try
