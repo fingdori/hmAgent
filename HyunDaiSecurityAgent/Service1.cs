@@ -6,8 +6,8 @@ namespace HyunDaiSecurityAgent
 {
     public partial class Service1 : ServiceBase
     {
-        private EventBinding eventBinding = new EventBinding();
-        private Thread thread;
+        private EventBinding _eventBinding = new EventBinding();
+        private Thread _thread;
 
         public Service1()
         {
@@ -20,14 +20,14 @@ namespace HyunDaiSecurityAgent
 
         protected override void OnStart(string[] args)
         {
-            ThreadStart threadStart = new ThreadStart(eventBinding.Run);
-            thread = new Thread(threadStart);
-            thread.Start();
+            ThreadStart threadStart = new ThreadStart(_eventBinding.Run);
+            _thread = new Thread(threadStart);
+            _thread.Start();
         }
 
         protected override void OnStop()
         {
-            thread.Abort();
+            _thread.Abort();
         }
     }
 }

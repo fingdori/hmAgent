@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -12,13 +8,15 @@ namespace HyunDaiSecurityAgent
     class ConfigManager
     {
         // C#에서 constant는 pascal case
-        private const string DefaultIp = "0.0.0.0";
+        private const String DefaultIp = "0.0.0.0";
         private const int DefaultPort = 514;
+        private const String DefaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>";
+        // private variable은 underscore를 prefix로 씀 (debugging 시 변수 위치가 top에 있음)
         private static String _ip;
         private static int _port;
         private static String _configFilePath = AppDomain.CurrentDomain.BaseDirectory + "conf" + Path.DirectorySeparatorChar + "config.xml";
-        static EventLog _localLog = LogManager.getLocalLog();
-        static String defaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>"; 
+        private static EventLog _localLog = LogManager.getLocalLog();
+
 
         public static void initConf() {
 #if DEBUG
@@ -29,8 +27,7 @@ namespace HyunDaiSecurityAgent
 #endif
             
             XmlDocument xd = new XmlDocument();
-            // read xml file
-            // C#에서는 xml파일을 이용해서 data를 read/write하는 것이 기본적인 방식임 (System.Xml)
+            // C#에서는 xml파일을 이용해서 data를 read/write하는 것이 기본적인 방식임 (System.Xml 라이브러리가 잘 되어 있음)
             XmlNodeList xmlNodeListIp;
             XmlNodeList xmlNodeListPort;
 
@@ -63,7 +60,7 @@ namespace HyunDaiSecurityAgent
                 
             } else {
                 StreamWriter sw = File.CreateText(_configFilePath);
-                sw.WriteLine(defaultConfigXmlString);
+                sw.WriteLine(DefaultConfigXmlString);
                 sw.Flush();
                 // setting default value
                 _localLog.WriteEntry("no config file in file path : " + _configFilePath 

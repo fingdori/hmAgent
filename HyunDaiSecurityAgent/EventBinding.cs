@@ -14,9 +14,8 @@ namespace HyunDaiSecurityAgent
     class EventBinding
     {
         static UdpClient _udpClient;
-        // TODO : host와 port는 config file을 통해서 받아오도록 수정 필요
-        static String host = "192.168.1.200";
-        static int port = 514;
+        static String host;
+        static int port;
         static UTF8Encoding _encoding = new UTF8Encoding();
         static EventLog _localLog = LogManager.getLocalLog();
 
@@ -57,19 +56,14 @@ namespace HyunDaiSecurityAgent
             }
             catch (EventLogReadingException e)
             {
-                Console.WriteLine("Error reading the log: {0}", e.Message);
-                _localLog.WriteEntry(e.ToString(), EventLogEntryType.Error);
-                System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app 11111!!");
+                _localLog.WriteEntry(e.ToString(), EventLogEntryType.Error);               
             }
             catch (UnauthorizedAccessException uae)
             {
-                Console.WriteLine("UnauthorizedAccessException occur log: {0}", uae.Message);
                 _localLog.WriteEntry(uae.ToString(), EventLogEntryType.Error);
-                System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app 2222222!!");
             }
             catch (Exception ee)
             {
-                Console.WriteLine("error : " + ee.ToString());
                 _localLog.WriteEntry(ee.ToString(), EventLogEntryType.Error);
             }
             finally
@@ -126,11 +120,13 @@ namespace HyunDaiSecurityAgent
             portableSyslogUdpSend(host, port, xmlString);
         }
 
+        // syslog 형식에 맞춰서 메시지를 만든 후 udp로 asyncronous 하게 전송
         static async void portableSyslogUdpSend(String host, int port, String msg)
         {        
             var process = Process.GetCurrentProcess();
             SyslogRfc5424MessageSerializer syslogRfc5424MessageSerializerUtf8 = new SyslogRfc5424MessageSerializer(Encoding.UTF8);
-
+    
+            // making syslog(rfc5424, rfc3164) message format
             var message = new SyslogMessage(DateTime.Now,
             facility: Facility.UserLevelMessages,
             severity: Severity.Debug,
@@ -154,6 +150,6 @@ namespace HyunDaiSecurityAgent
                 _localLog.WriteEntry("upd send error : " + e.ToString(), EventLogEntryType.Error);
             }
 
-        }
+        }        
     }
 }
