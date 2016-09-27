@@ -90,7 +90,7 @@ namespace HyunDaiSecurityAgent
             }
             else
             {
-                Console.WriteLine("The event instance was null.");
+                _localLog.WriteEntry("Event Record is Null", EventLogEntryType.Error);
             }
         }
 
@@ -105,7 +105,6 @@ namespace HyunDaiSecurityAgent
             {
                 if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
                 {
-                    Console.WriteLine(ni.Name);
                     foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
                     {
                         if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
