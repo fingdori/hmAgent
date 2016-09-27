@@ -4,8 +4,8 @@ using SyslogNet.Client.Transport;
 using System;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Net.NetworkInformation;
-using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
@@ -13,12 +13,18 @@ namespace HyunDaiSecurityAgent
 {
     class EventBinding
     {
-        static UdpClient _udpClient;
         static String host;
         static int port;
         static UTF8Encoding _encoding = new UTF8Encoding();
         static EventLog _localLog = LogManager.getLocalLog();
+        static FileSystemWatcher fileSystemWater = new FileSystemWatcher();
 
+        // config file change event handler
+        private static void OnChangeConfigFile(object source, FileSystemEventArgs s) {
+            ConfigManager.initConf();
+        }
+
+        // event binding main function
         public void Run()
         {
             String logName = "Security";
@@ -32,7 +38,15 @@ namespace HyunDaiSecurityAgent
                 host = ConfigManager.getIp();
                 port = ConfigManager.getPort();
 
-                _localLog.WriteEntry("start HyunDae Application!!!", EventLogEntryType.Information);
+                // configFileChange Event Handler
+                fileSystemWater.Path = Path.GetDirectoryName(ConfigManager.getConfigFilePath());
+                fileSystemWater.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;
+                fileSystemWater.Changed += OnChangeConfigFile;
+                fileSystemWater.Created += OnChangeConfigFile;
+                fileSystemWater.Deleted += OnChangeConfigFile;
+                fileSystemWater.Filter = ("*.*");
+                fileSystemWater.EnableRaisingEvents = true;
+
                 //System.IO.File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "startHyunDai.txt", "hyundae app start!!");
                 EventLogQuery eventsQuery = new EventLogQuery(logName,
                     PathType.LogName, queryString);
@@ -86,7 +100,7 @@ namespace HyunDaiSecurityAgent
             {
                 String xmlString = arg.EventRecord.ToXml();
                 byte[] data = _encoding.GetBytes(xmlString);
-                portableSyslogUdpSend(host, port, xmlString);
+                portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getPort(), xmlString);
             }
             else
             {
@@ -116,7 +130,7 @@ namespace HyunDaiSecurityAgent
                     }
                 }
             }
-            portableSyslogUdpSend(host, port, xmlString);
+            portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getPort(), xmlString);
         }
 
         // syslog 형식에 맞춰서 메시지를 만든 후 udp로 asyncronous 하게 전송

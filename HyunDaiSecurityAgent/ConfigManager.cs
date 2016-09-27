@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -17,13 +18,10 @@ namespace HyunDaiSecurityAgent
         private static String _configFilePath = AppDomain.CurrentDomain.BaseDirectory + "conf" + Path.DirectorySeparatorChar + "config.xml";
         private static EventLog _localLog = LogManager.getLocalLog();
 
-
         public static void initConf() {
 #if DEBUG
-            _configFilePath = AppDomain.CurrentDomain.BaseDirectory;
-            DirectoryInfo di = new DirectoryInfo(_configFilePath);
-            DirectoryInfo diParent = di.Parent.Parent.Parent;
-            _configFilePath = diParent.FullName + Path.DirectorySeparatorChar + "conf" + Path.DirectorySeparatorChar + "config_debug.xml";
+            // config file change 이벤트 시 UNC path는 읽어들이지 못함
+            _configFilePath = "c:\\conf\\config_debug.xml";
 #endif
             
             XmlDocument xd = new XmlDocument();
@@ -31,9 +29,16 @@ namespace HyunDaiSecurityAgent
             XmlNodeList xmlNodeListIp;
             XmlNodeList xmlNodeListPort;
 
-            if (System.IO.File.Exists(_configFilePath)) {
+            if (File.Exists(_configFilePath)) {
                 try
                 {
+                    // wait file is readable
+                    while (Utils.IsFileLocked(new FileInfo(_configFilePath)))
+                    {
+                        // do something, for example wait a second
+                        System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                    }
+
                     xd.Load(_configFilePath);
                     xmlNodeListIp = xd.GetElementsByTagName("ip");
                     xmlNodeListPort = xd.GetElementsByTagName("port");
@@ -83,5 +88,8 @@ namespace HyunDaiSecurityAgent
             return _port;
         }
 
+        public static String getConfigFilePath() {
+            return _configFilePath;
+        }
     }
 }
