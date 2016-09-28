@@ -22,8 +22,7 @@ namespace HyunDaiSecurityAgent
 #if DEBUG
             // config file change 이벤트 시 UNC path는 읽어들이지 못함
             _configFilePath = "c:\\conf\\config_debug.xml";
-#endif
-            
+#endif         
             XmlDocument xd = new XmlDocument();
             // C#에서는 xml파일을 이용해서 data를 read/write하는 것이 기본적인 방식임 (System.Xml 라이브러리가 잘 되어 있음)
             XmlNodeList xmlNodeListIp;

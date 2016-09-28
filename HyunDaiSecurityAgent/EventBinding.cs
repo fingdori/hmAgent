@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
 using System.IO;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading;
@@ -96,6 +98,10 @@ namespace HyunDaiSecurityAgent
             String xmlString = "<event><description>network interface change event occur</description>";
             byte[] data = _encoding.GetBytes(xmlString);
             NetworkInterface[] nts = NetworkInterface.GetAllNetworkInterfaces();
+            DateTime now = DateTime.UtcNow;
+            // event Log Time Format
+            string currentTimeString = now.ToString("yyyy-MM-ddTHH:mm:ss.fffffff00K",
+                                    CultureInfo.InvariantCulture);
 
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -107,6 +113,8 @@ namespace HyunDaiSecurityAgent
                         {
                             xmlString += "<ip>" + ip.Address.ToString() + "</ip>";
                             xmlString += "<mac>" + ni.GetPhysicalAddress().ToString() + "</mac>";
+                            xmlString += "<hostname>" + Dns.GetHostName() + "</hostname>";
+                            xmlString += "<currentSystemTime>" + currentTimeString + "</currentSystemTime>";
                             xmlString += "</event>";
                         }
                     }
