@@ -943,7 +943,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1249B945B5724A019C90476518817D87"
             {
-            "SourcePath" = "8:\\\\Mac\\Home\\Desktop\\c_#\\src\\HyunDaiSecurityAgent\\conf\\config.xml"
+            "SourcePath" = "8:..\\conf\\config.xml"
             "TargetName" = "8:config.xml"
             "Tag" = "8:"
             "Folder" = "8:_8E9572974B724EF68ABA0EBC8A794BAB"

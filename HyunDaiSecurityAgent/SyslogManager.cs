@@ -41,7 +41,6 @@ namespace HyunDaiSecurityAgent
             {
                 _localLog.WriteEntry("upd send error : " + e.ToString(), EventLogEntryType.Error);
             }
-
         }
     }
 }
