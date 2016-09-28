@@ -9,9 +9,9 @@ namespace HyunDaiSecurityAgent
     class ConfigManager
     {
         // C#에서 constant는 pascal case
-        private const String DefaultIp = "0.0.0.0";
+        private const string DefaultIp = "0.0.0.0";
         private const int DefaultPort = 514;
-        private const String DefaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>";
+        private const string DefaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>";
         // private variable은 underscore를 prefix로 씀 (debugging 시 변수 위치가 top에 있음)
         private static String _ip;
         private static int _port;
