@@ -132,6 +132,7 @@ namespace HyunDaiSecurityAgent
                 }
             }
 
+
             // xml을 안만들고 바로 message 만들기도 가능
             IpChangeMessageManager ipChangeMessageManager = new IpChangeMessageManager(" ");
             String resultString = ipChangeMessageManager.makeMessage(xmlString);
