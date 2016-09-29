@@ -114,6 +114,9 @@ namespace HyunDaiSecurityAgent
             // event Log Time Format
             string currentTimeString = now.ToString("yyyy-MM-ddTHH:mm:ss.fffffff00K",
                                     CultureInfo.InvariantCulture);
+            String ipAddress = "";
+            String MacAddress = "";
+            String hostName = Dns.GetHostName();
 
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -123,15 +126,26 @@ namespace HyunDaiSecurityAgent
                     {
                         if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
                         {
-                            xmlString += "<ip>" + ip.Address.ToString() + "</ip>";
-                            xmlString += "<mac>" + ni.GetPhysicalAddress().ToString() + "</mac>";
-                            xmlString += "<hostname>" + Dns.GetHostName() + "</hostname>";
-                            xmlString += "<currentSystemTime>" + currentTimeString + "</currentSystemTime>";
-                            xmlString += "</event>";
+                            if (!ipAddress.Equals("")) {
+                                ipAddress += ",";
+                            }
+                            ipAddress += ip.Address.ToString();
+
+                            if (!MacAddress.Equals(""))
+                            {
+                                MacAddress += ",";
+                            }
+                            MacAddress += ni.GetPhysicalAddress().ToString();
                         }
                     }
                 }
             }
+
+            xmlString += "<ip>" + ipAddress + "</ip>";
+            xmlString += "<mac>" + MacAddress + "</mac>";
+            xmlString += "<hostname>" + hostName + "</hostname>";
+            xmlString += "<currentSystemTime>" + currentTimeString + "</currentSystemTime>";
+            xmlString += "</event>";
 
             // xml을 안만들고 바로 message 만들기도 가능
             IpChangeMessageManager ipChangeMessageManager = new IpChangeMessageManager(" ");
