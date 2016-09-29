@@ -85,7 +85,6 @@ namespace HyunDaiSecurityAgent
             {
                 String xmlString = arg.EventRecord.ToXml();
                 String resultString;
-
                 try
                 {
                     XmlDocument xd = new XmlDocument();

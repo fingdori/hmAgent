@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -113,6 +110,7 @@ namespace HyunDaiSecurityAgent
             catch (Exception e)
             {
                 _localLog.WriteEntry("Xml parsing error : \r\n" + e.ToString(), EventLogEntryType.Error);
+                throw new Exception("xml parsing error occur!!");
             }
 
             return sb.ToString();            
