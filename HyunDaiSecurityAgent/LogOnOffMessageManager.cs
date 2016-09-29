@@ -113,6 +113,7 @@ namespace HyunDaiSecurityAgent
             catch (Exception e)
             {
                 _localLog.WriteEntry("Xml parsing error : \r\n" + e.ToString(), EventLogEntryType.Error);
+                throw new Exception("xml parsing error occur!!");
             }
 
             return sb.ToString();            
