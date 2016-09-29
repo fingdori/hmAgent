@@ -66,6 +66,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MessageManager.cs" />
+    <Compile Include="IpChangeMessageManager.cs" />
+    <Compile Include="LogOnOffMessageManager.cs" />
     <Compile Include="SyslogManager.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="LogManager.cs" />
