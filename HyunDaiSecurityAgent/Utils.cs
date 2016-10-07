@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
+
 
 namespace HyunDaiSecurityAgent
 {
@@ -38,8 +34,6 @@ namespace HyunDaiSecurityAgent
 
         public static String getUUID() {
             // config 파일에 uuid 항목이 없을 경우 새로 생성해서 파일에 쓰기
-            
-
             Assembly assembly = Assembly.GetExecutingAssembly();
             XmlDocument doc = new XmlDocument();
             doc.Load(ConfigManager.getConfigFilePath());

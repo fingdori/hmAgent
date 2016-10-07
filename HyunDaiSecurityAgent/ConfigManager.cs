@@ -13,12 +13,27 @@ namespace HyunDaiSecurityAgent
         private const string DefaultConfigXmlString = "<config>\r\n<server-ip>\r\n0.0.0.0\r\n</server-ip>\r\n<log-on-log-port>\r\n514\r\n</log-on-log-port>"
             + "\r\n<log-off-log-port>\r\n514\r\n</log-off-log-port>\r\n<ip-change-log-port>\r\n514\r\n</ip-change-log-port></config>";
         // private variable은 underscore를 prefix로 씀 (debugging 시 변수 위치가 top에 있음)
+
         private static String _ip;
         private static int _logOnPort;
         private static int _logOffPort;
         private static int _ipAddressChangePort;
         private static String _configFilePath = AppDomain.CurrentDomain.BaseDirectory + "conf" + Path.DirectorySeparatorChar + "config.xml";
         private static EventLog _localLog = LogManager.getLocalLog();
+        private static String _uuid;
+
+        public static String Uuid
+        {
+            get
+            {
+                return _uuid;
+            }
+
+            set
+            {
+                _uuid = value;
+            }
+        }
 
         public static void initConf() {
 #if DEBUG
@@ -31,6 +46,10 @@ namespace HyunDaiSecurityAgent
             XmlNode xmlNodeLogOnPort;
             XmlNode xmlNodeLogOffPort;
             XmlNode xmlNodeIpAddressChangePort;
+
+            if (Uuid == null) {
+                Uuid = RegManager.getUuidFromRegistry();
+            }
 
             if (File.Exists(_configFilePath)) {
                 try
@@ -107,7 +126,6 @@ namespace HyunDaiSecurityAgent
         {
             return _ipAddressChangePort;
         }
-
         public static String getConfigFilePath() {
             return _configFilePath;
         }

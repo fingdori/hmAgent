@@ -33,7 +33,7 @@ namespace HyunDaiSecurityAgent
             try
             {
                 ConfigManager.initConf();
-
+                
                 // configFileChange Event watcher
                 fileSystemWater.Path = Path.GetDirectoryName(ConfigManager.getConfigFilePath());
                 fileSystemWater.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite;

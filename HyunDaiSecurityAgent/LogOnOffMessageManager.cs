@@ -49,7 +49,7 @@ namespace HyunDaiSecurityAgent
                     //예)
                     //Logon|EventID=4624(공백)TimeCreated=2016-09-21T05:16:59.504547000Z(공백)EventRecordID=xxx
                     case "4624": // Log on
-                        sb.Append("UUID=" + Utils.getUUID() + LogTypeDelimeter + LogTypeLogOn + LogTypeDelimeter);
+                        sb.Append("UUID=" + ConfigManager.Uuid + LogTypeDelimeter + LogTypeLogOn + LogTypeDelimeter);
 
                         sb.Append(addSingleNodeInnerText("EventID", xd));
                         sb.Append(addSingleNodeAttributeValue("TimeCreated", "TimeCreated", "SystemTime", xd));
@@ -89,7 +89,7 @@ namespace HyunDaiSecurityAgent
                     //LogOff|EventID=4624(공백)TimeCreated=2016-09-21T05:16:59.504547000Z(공백)EventRecordID=xxx
 
                     case "4634": // Log out
-                        sb.Append("UUID=" + Utils.getUUID() + LogTypeDelimeter + LogTypeLogOff + LogTypeDelimeter);
+                        sb.Append("UUID=" + ConfigManager.Uuid + LogTypeDelimeter + LogTypeLogOff + LogTypeDelimeter);
 
                         sb.Append(addSingleNodeInnerText("EventID", xd));
                         sb.Append(addSingleNodeAttributeValue("TimeCreated", "TimeCreated", "SystemTime", xd));

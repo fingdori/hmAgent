@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -19,7 +16,7 @@ namespace HyunDaiSecurityAgent
             StringBuilder sb = new StringBuilder();
             XmlDocument xd = new XmlDocument();
             xd.LoadXml(xmlString);
-            sb.Append("UUID=" + Utils.getUUID() + LogTypeDelimeter + LogTypeIpChange + LogTypeDelimeter);
+            sb.Append("UUID=" + ConfigManager.Uuid + LogTypeDelimeter + LogTypeIpChange + LogTypeDelimeter);
             sb.Append(addSingleNodeInnerText("ip", xd));
             sb.Append(addSingleNodeInnerText("mac", xd));
             sb.Append(addSingleNodeInnerText("hostname", xd));
