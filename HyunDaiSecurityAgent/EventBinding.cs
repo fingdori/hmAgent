@@ -92,8 +92,7 @@ namespace HyunDaiSecurityAgent
                     xd.LoadXml(xmlString);
                     LogOnOffMessageManager logonMessage = new LogOnOffMessageManager(" ");
                     resultString = logonMessage.makeMessage(xmlString);
-                    String logType = resultString.Split(new String[] {"|"}, StringSplitOptions.None)[0];
-                    String test = LogOnOffMessageManager.LogTypeLogOff;
+                    String logType = resultString.Split(new String[] {"|"}, StringSplitOptions.None)[1];
 
                     if (logType.Equals(LogOnOffMessageManager.LogTypeLogOn)) {
                         SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getLogOnPort(), resultString);

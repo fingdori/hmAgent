@@ -19,7 +19,7 @@ namespace HyunDaiSecurityAgent
             StringBuilder sb = new StringBuilder();
             XmlDocument xd = new XmlDocument();
             xd.LoadXml(xmlString);
-            sb.Append("IpChanged|");
+            sb.Append("UUID=" + Utils.getUUID() + LogTypeDelimeter + LogTypeIpChange + LogTypeDelimeter);
             sb.Append(addSingleNodeInnerText("ip", xd));
             sb.Append(addSingleNodeInnerText("mac", xd));
             sb.Append(addSingleNodeInnerText("hostname", xd));

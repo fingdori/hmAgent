@@ -11,7 +11,7 @@ namespace HyunDaiSecurityAgent
         private const string DefaultIp = "0.0.0.0";
         private const int DefaultPort = 514;
         private const string DefaultConfigXmlString = "<config>\r\n<server-ip>\r\n0.0.0.0\r\n</server-ip>\r\n<log-on-log-port>\r\n514\r\n</log-on-log-port>"
-            + "\r\n<log-out-log-port>\r\n514\r\n</log-out-log-port>\r\n<ip-change-log-port>\r\n514\r\n</ip-change-log-port></config>";
+            + "\r\n<log-off-log-port>\r\n514\r\n</log-off-log-port>\r\n<ip-change-log-port>\r\n514\r\n</ip-change-log-port></config>";
         // private variable은 underscore를 prefix로 씀 (debugging 시 변수 위치가 top에 있음)
         private static String _ip;
         private static int _logOnPort;
@@ -46,7 +46,7 @@ namespace HyunDaiSecurityAgent
                     // set xpath query
                     xmlNodeIp = xd.SelectSingleNode("/config/server-ip[1]");
                     xmlNodeLogOnPort = xd.SelectSingleNode("/config/ports/log-on-log-port[1]");
-                    xmlNodeLogOffPort = xd.SelectSingleNode("/config/ports/log-out-log-port[1]");
+                    xmlNodeLogOffPort = xd.SelectSingleNode("/config/ports/log-off-log-port[1]");
                     xmlNodeIpAddressChangePort = xd.SelectSingleNode("/config/ports/ip-change-log-port[1]");
 
                     //  validation check

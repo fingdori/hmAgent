@@ -6,9 +6,9 @@
     <log-on-log-port>
       9999
     </log-on-log-port>
-    <log-out-log-port>
+    <log-off-log-port>
       9998
-    </log-out-log-port>
+    </log-off-log-port>
     <ip-change-log-port>
       9997
     </ip-change-log-port>

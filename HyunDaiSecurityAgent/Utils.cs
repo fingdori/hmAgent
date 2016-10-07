@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,6 +32,13 @@ namespace HyunDaiSecurityAgent
                     stream.Close();
             }
             return false;
+        }
+
+        public static String getUUID() {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            String guid = assembly.GetType().GUID.ToString();
+            
+            return guid;
         }
 
     }
