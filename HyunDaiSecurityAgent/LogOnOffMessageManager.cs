@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -11,6 +8,33 @@ namespace HyunDaiSecurityAgent
     class LogOnOffMessageManager : MessageManager
     {
         private static EventLog _localLog = LogManager.getLocalLog();
+        private const String _logTypeLogOn = "Logon";
+        private const String _logTypeLogOff = "Logoff";
+        private const String _logTypeDelimeter = "|";
+
+        public static string LogTypeLogOn
+        {
+            get
+            {
+                return _logTypeLogOn;
+            }
+        }
+
+        public static string LogTypeLogOff
+        {
+            get
+            {
+                return _logTypeLogOff;
+            }
+        }
+
+        public static string LogTypeDelimeter
+        {
+            get
+            {
+                return _logTypeDelimeter;
+            }
+        }
 
         public LogOnOffMessageManager(string delimiter) : base(delimiter)
         {
@@ -52,7 +76,7 @@ namespace HyunDaiSecurityAgent
                     //예)
                     //Logon|EventID=4624(공백)TimeCreated=2016-09-21T05:16:59.504547000Z(공백)EventRecordID=xxx
                     case "4624": // Log on
-                        sb.Append("Logon|");
+                        sb.Append(LogTypeLogOn + LogTypeDelimeter);
 
                         sb.Append(addSingleNodeInnerText("EventID", xd));
                         sb.Append(addSingleNodeAttributeValue("TimeCreated", "TimeCreated", "SystemTime", xd));
@@ -92,7 +116,7 @@ namespace HyunDaiSecurityAgent
                     //LogOff|EventID=4624(공백)TimeCreated=2016-09-21T05:16:59.504547000Z(공백)EventRecordID=xxx
 
                     case "4634": // Log out
-                        sb.Append("LogOff|");
+                        sb.Append(LogTypeLogOff + LogTypeDelimeter);
 
                         sb.Append(addSingleNodeInnerText("EventID", xd));
                         sb.Append(addSingleNodeAttributeValue("TimeCreated", "TimeCreated", "SystemTime", xd));
