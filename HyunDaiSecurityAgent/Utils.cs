@@ -6,6 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace HyunDaiSecurityAgent
 {
@@ -35,10 +37,26 @@ namespace HyunDaiSecurityAgent
         }
 
         public static String getUUID() {
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            String guid = assembly.GetType().GUID.ToString();
+            // config 파일에 uuid 항목이 없을 경우 새로 생성해서 파일에 쓰기
             
-            return guid;
+
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ConfigManager.getConfigFilePath());
+
+            XmlNode xmlNodeUuid = doc.SelectSingleNode("/config/uuid[1]");
+
+            if (xmlNodeUuid == null) {
+                XmlElement el = (XmlElement)doc.SelectSingleNode("/config");
+                XmlElement guidXmlNode = doc.CreateElement("uuid");
+                guidXmlNode.InnerText = Guid.NewGuid().ToString();
+                el.AppendChild(guidXmlNode);
+                doc.Save(ConfigManager.getConfigFilePath());
+
+                xmlNodeUuid = doc.SelectSingleNode("/config/uuid[1]");
+            }
+
+            return xmlNodeUuid.InnerText.Replace("\r\n", "").Trim();
         }
 
     }
