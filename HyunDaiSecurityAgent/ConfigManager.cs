@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
 using System.Xml;
 
 namespace HyunDaiSecurityAgent
@@ -11,10 +10,13 @@ namespace HyunDaiSecurityAgent
         // C#에서 constant는 pascal case
         private const string DefaultIp = "0.0.0.0";
         private const int DefaultPort = 514;
-        private const string DefaultConfigXmlString = "<config>\r\n<ip>\r\n0.0.0.0\r\n</ip>\r\n<port>\r\n0\r\n</port>\r\n</config>";
+        private const string DefaultConfigXmlString = "<config>\r\n<server-ip>\r\n0.0.0.0\r\n</server-ip>\r\n<log-on-log-port>\r\n514\r\n</log-on-log-port>"
+            + "\r\n<log-out-log-port>\r\n514\r\n</log-out-log-port>\r\n<ip-change-log-port>\r\n514\r\n</ip-change-log-port></config>";
         // private variable은 underscore를 prefix로 씀 (debugging 시 변수 위치가 top에 있음)
         private static String _ip;
-        private static int _port;
+        private static int _logOnPort;
+        private static int _logOffPort;
+        private static int _ipAddressChangePort;
         private static String _configFilePath = AppDomain.CurrentDomain.BaseDirectory + "conf" + Path.DirectorySeparatorChar + "config.xml";
         private static EventLog _localLog = LogManager.getLocalLog();
 
@@ -25,8 +27,10 @@ namespace HyunDaiSecurityAgent
 #endif         
             XmlDocument xd = new XmlDocument();
             // C#에서는 xml파일을 이용해서 data를 read/write하는 것이 기본적인 방식임 (System.Xml 라이브러리가 잘 되어 있음)
-            XmlNodeList xmlNodeListIp;
-            XmlNodeList xmlNodeListPort;
+            XmlNode xmlNodeIp;
+            XmlNode xmlNodeLogOnPort;
+            XmlNode xmlNodeLogOffPort;
+            XmlNode xmlNodeIpAddressChangePort;
 
             if (File.Exists(_configFilePath)) {
                 try
@@ -39,20 +43,26 @@ namespace HyunDaiSecurityAgent
                     }
 
                     xd.Load(_configFilePath);
-                    xmlNodeListIp = xd.GetElementsByTagName("ip");
-                    xmlNodeListPort = xd.GetElementsByTagName("port");
+                    // set xpath query
+                    xmlNodeIp = xd.SelectSingleNode("/config/server-ip[1]");
+                    xmlNodeLogOnPort = xd.SelectSingleNode("/config/ports/log-on-log-port[1]");
+                    xmlNodeLogOffPort = xd.SelectSingleNode("/config/ports/log-out-log-port[1]");
+                    xmlNodeIpAddressChangePort = xd.SelectSingleNode("/config/ports/ip-change-log-port[1]");
 
                     //  validation check
-                    if (xmlNodeListIp.Count == 1 && xmlNodeListPort.Count == 1)
+                    if (xmlNodeIp != null && xmlNodeLogOnPort != null && xmlNodeLogOffPort != null && xmlNodeIpAddressChangePort != null)
                     {
-                        _ip = xmlNodeListIp[0].InnerText.Replace("\r\n", "").Trim();
-                        _port = Int32.Parse(xmlNodeListPort[0].InnerText.Replace("\r\n", "").Trim());
+                        _ip = xmlNodeIp.InnerText.Replace("\r\n", "").Trim();
+                        _logOnPort = Int32.Parse(xmlNodeLogOnPort.InnerText.Replace("\r\n", "").Trim());
+                        _logOffPort = Int32.Parse(xmlNodeLogOffPort.InnerText.Replace("\r\n", "").Trim());
+                        _ipAddressChangePort = Int32.Parse(xmlNodeIpAddressChangePort.InnerText.Replace("\r\n", "").Trim());
                     }
                     else
                     {
                         // error log write
-                        _localLog.WriteEntry("config xml element count error (# of ip element : " + xmlNodeListIp.Count
-                            + " # of port element : " + xmlNodeListPort.Count + ")", EventLogEntryType.Error);
+                        _localLog.WriteEntry("config xml element count error (must contain field" +
+                            "/config/server-ip, /config/ports/log-on-log-port, /config/ports/log-out-log-port" +
+                            "/config/ports/ip-change-log-port)", EventLogEntryType.Error);
                     }
                 }
                 catch (Exception xmle) {
@@ -76,15 +86,26 @@ namespace HyunDaiSecurityAgent
 
         private static void setDefaultValue() {
             _ip = DefaultIp;
-            _port = DefaultPort;
+            _logOnPort = DefaultPort;
+            _logOffPort = DefaultPort;
+            _ipAddressChangePort = DefaultPort;
         }
 
         public static String getIp() {
             return _ip;
         }
 
-        public static int getPort() {
-            return _port;
+        public static int getLogOnPort()
+        {
+            return _logOnPort;
+        }
+        public static int getLogOffPort()
+        {
+            return _logOffPort;
+        }
+        public static int getIpAddressChangePort()
+        {
+            return _ipAddressChangePort;
         }
 
         public static String getConfigFilePath() {

@@ -1,8 +1,16 @@
 <config>
-  <ip>
+  <server-ip>
     192.168.1.200
-  </ip>
-  <port>
-    514
-  </port>  
+  </server-ip>
+  <ports>
+    <log-on-log-port>
+      9999
+    </log-on-log-port>
+    <log-out-log-port>
+      9998
+    </log-out-log-port>
+    <ip-change-log-port>
+      9997
+    </ip-change-log-port>
+  </ports>
 </config>

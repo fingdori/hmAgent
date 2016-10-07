@@ -92,7 +92,14 @@ namespace HyunDaiSecurityAgent
                     xd.LoadXml(xmlString);
                     LogOnOffMessageManager logonMessage = new LogOnOffMessageManager(" ");
                     resultString = logonMessage.makeMessage(xmlString);
-                    SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getPort(), resultString);
+                    String logType = resultString.Split(new String[] {"|"}, StringSplitOptions.None)[0];
+                    String test = LogOnOffMessageManager.LogTypeLogOff;
+
+                    if (logType.Equals(LogOnOffMessageManager.LogTypeLogOn)) {
+                        SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getLogOnPort(), resultString);
+                    } else {
+                        SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getLogOffPort(), resultString);
+                    }                      
                 }
                 catch (Exception e) {
                     _localLog.WriteEntry("Log on off message make error \r\n" + e.ToString(), EventLogEntryType.Error);
@@ -150,7 +157,7 @@ namespace HyunDaiSecurityAgent
             // xml을 안만들고 바로 message 만들기도 가능
             IpChangeMessageManager ipChangeMessageManager = new IpChangeMessageManager(" ");
             String resultString = ipChangeMessageManager.makeMessage(xmlString);
-            SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getPort(), resultString);
+            SyslogManager.portableSyslogUdpSend(ConfigManager.getIp(), ConfigManager.getIpAddressChangePort(), resultString);
         }
     }  
 }
