@@ -18,7 +18,7 @@ namespace HyunDaiSecurityAgent
         {
             StringBuilder sb = new StringBuilder();
             XmlDocument xd = new XmlDocument();
-
+            CommonMessageManager commonMessageManager = new CommonMessageManager(getDelemiter());
             try
             {
                 xd.LoadXml(xmlString);
@@ -67,10 +67,8 @@ namespace HyunDaiSecurityAgent
                         sb.Append(addDataElementValueMatchNameAttribute("LogonGuid", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("ProcessId", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("ProcessName", xd));
-                        //sb.Append(addDataElementValueMatchNameAttribute("IpAddress", xd));
-                        sb.Append("IpAddress=" + Utils.getActiveIps() + " ");
                         sb.Append(addDataElementValueMatchNameAttribute("IpPort", xd));
-
+                        sb.Append(commonMessageManager.makeMessage(null) + getDelemiter());
                         sb.Remove(sb.Length - 1, 1);
                         break;
 
@@ -98,11 +96,9 @@ namespace HyunDaiSecurityAgent
                         sb.Append(addSingleNodeAttributeValue("ProcessID", "Execution", "ProcessID", xd));
                         sb.Append(addSingleNodeInnerText("Computer", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("TargetUserSid", xd));
-                        sb.Append(addDataElementValueMatchNameAttribute("TargetUserName", xd));
-                        sb.Append(addDataElementValueMatchNameAttribute("TargetDomainName", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("TargetLogonId", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("LogonType", xd));
-
+                        sb.Append(commonMessageManager.makeMessage(null) + getDelemiter());
                         sb.Remove(sb.Length - 1, 1);
 
                         break;

@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonMessageManager.cs" />
     <Compile Include="RegManager.cs" />
     <Compile Include="MessageManager.cs" />
     <Compile Include="IpChangeMessageManager.cs" />
