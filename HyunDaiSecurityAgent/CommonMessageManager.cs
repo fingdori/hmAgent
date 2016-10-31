@@ -26,11 +26,11 @@ namespace HyunDaiSecurityAgent
             {
                 DateTime now = DateTime.UtcNow;
                 sb.Append(getActiveIpsAndMacsMesaage());
-                sb.Append(getDelemiter() + "Computer=" + Environment.MachineName);
-                sb.Append(getDelemiter() + "TargetUserName=" + Environment.UserName);
-                sb.Append(getDelemiter() + "TargetDomainName=" + Environment.UserDomainName);
-                sb.Append(getDelemiter() + "currentSystemTime=" + now.ToString("yyyy-MM-ddTHH:mm:ss.fffffff00K",
-                                    CultureInfo.InvariantCulture));
+                sb.Append(getDelemiter() + "Computer=\"" + Environment.MachineName + "\"");
+                sb.Append(getDelemiter() + "TargetUserName=\"" + Environment.UserName + "\"");
+                sb.Append(getDelemiter() + "TargetDomainName=" + Environment.UserDomainName + "\"");
+                sb.Append(getDelemiter() + "currentSystemTime=\"" + now.ToString("yyyy-MM-ddTHH:mm:ss.fffffff00K",
+                                    CultureInfo.InvariantCulture) + "\"");
             }
             catch (Exception e)
             {
@@ -83,8 +83,8 @@ namespace HyunDaiSecurityAgent
 
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("IpAddress=" + ipAddress);
-            sb.Append(getDelemiter() + "MacAddress=" + MacAddress);
+            sb.Append("IpAddress=\"" + ipAddress + "\"");
+            sb.Append(getDelemiter() + "MacAddress=\"" + MacAddress + "\"");
 
             return sb.ToString();
         }

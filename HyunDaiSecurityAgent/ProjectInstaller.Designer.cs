@@ -40,8 +40,8 @@
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "사용자의 PC 보호를 위해 비정상 행위에 대한 로그를 전송합니다.";
-            this.serviceInstaller1.ServiceName = "HyunDai Security Log Sender";
+            this.serviceInstaller1.Description = "Log Generator";
+            this.serviceInstaller1.ServiceName = "Log Generator";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller

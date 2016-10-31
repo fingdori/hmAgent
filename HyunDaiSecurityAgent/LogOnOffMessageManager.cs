@@ -126,7 +126,9 @@ namespace HyunDaiSecurityAgent
         private String addSingleNodeInnerText(String elementName, XmlDocument xd) {
             StringBuilder sb = new StringBuilder();
             sb.Append(elementName + "=");
+            sb.Append("\"");
             sb.Append(xd.GetElementsByTagName(elementName)[0].InnerText);
+            sb.Append("\"");
             sb.Append(getDelemiter());
             return sb.ToString();
         }
@@ -135,7 +137,9 @@ namespace HyunDaiSecurityAgent
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(name + "=");
+            sb.Append("\"");
             sb.Append(xd.GetElementsByTagName(elementName)[0].Attributes[attr].Value);
+            sb.Append("\"");
             sb.Append(getDelemiter());
             return sb.ToString();
         }
@@ -143,7 +147,9 @@ namespace HyunDaiSecurityAgent
         private String addDataElementValueMatchNameAttribute(String attrName, XmlDocument xd) {
             StringBuilder sb = new StringBuilder();
             sb.Append(attrName + "=");
+            sb.Append("\"");
             sb.Append(xd.SelectSingleNode(getDataNameAttributeXpathQuery(attrName)).InnerText);
+            sb.Append("\"");
             sb.Append(getDelemiter());
             return sb.ToString();
         }

@@ -28,7 +28,9 @@ namespace HyunDaiSecurityAgent
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(elementName + "=");
+            sb.Append("\"");
             sb.Append(xd.GetElementsByTagName(elementName)[0].InnerText);
+            sb.Append("\"");
             sb.Append(getDelemiter());
             return sb.ToString();
         }
