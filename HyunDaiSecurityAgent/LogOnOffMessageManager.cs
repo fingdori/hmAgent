@@ -67,7 +67,8 @@ namespace HyunDaiSecurityAgent
                         sb.Append(addDataElementValueMatchNameAttribute("LogonGuid", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("ProcessId", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("ProcessName", xd));
-                        sb.Append(addDataElementValueMatchNameAttribute("IpAddress", xd));
+                        //sb.Append(addDataElementValueMatchNameAttribute("IpAddress", xd));
+                        sb.Append("IpAddress=" + Utils.getActiveIps() + " ");
                         sb.Append(addDataElementValueMatchNameAttribute("IpPort", xd));
 
                         sb.Remove(sb.Length - 1, 1);
