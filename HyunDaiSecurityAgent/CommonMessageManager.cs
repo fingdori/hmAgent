@@ -28,7 +28,7 @@ namespace HyunDaiSecurityAgent
                 sb.Append(getActiveIpsAndMacsMesaage());
                 sb.Append(getDelemiter() + "Computer=\"" + Environment.MachineName + "\"");
                 sb.Append(getDelemiter() + "TargetUserName=\"" + Environment.UserName + "\"");
-                sb.Append(getDelemiter() + "TargetDomainName=" + Environment.UserDomainName + "\"");
+                sb.Append(getDelemiter() + "TargetDomainName=\"" + Environment.UserDomainName + "\"");
                 sb.Append(getDelemiter() + "currentSystemTime=\"" + now.ToString("yyyy-MM-ddTHH:mm:ss.fffffff00K",
                                     CultureInfo.InvariantCulture) + "\"");
             }
