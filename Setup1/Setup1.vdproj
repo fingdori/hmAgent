@@ -22,7 +22,7 @@
         "Entry"
         {
         "MsmKey" = "8:_0E03967D0773E8F7A9205E5F5B3D58AD"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -63,6 +63,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_31464B1C79A5C98FC5DB49B043624F97"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_31464B1C79A5C98FC5DB49B043624F97"
+        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4BA93C8B25556F3FB5BDEAF3E4A83259"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,7 +100,7 @@
         "Entry"
         {
         "MsmKey" = "8:_56F3EA9DB09548ED2A09D76556B2ACB6"
-        "OwnerKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
+        "OwnerKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -141,18 +153,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
-        "OwnerKey" = "8:_BD8CE8B811F7ECD27FBE50857D8E7001"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
-        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_64FA2FB16CE2FE4A9074169F40755177"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
@@ -160,30 +160,12 @@
         "Entry"
         {
         "MsmKey" = "8:_64FA2FB16CE2FE4A9074169F40755177"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_69908B1FDC84E288D9E89C23FFE4C2BC"
-        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AB25568115FA71927006595A15B047C"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AB25568115FA71927006595A15B047C"
-        "OwnerKey" = "8:_72EF2F5A0665BC050716AF34AC3B6ABA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6AB25568115FA71927006595A15B047C"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -195,20 +177,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_72EF2F5A0665BC050716AF34AC3B6ABA"
-        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "MsmKey" = "8:_740BB85F273E95B4892C478F7D0C40D7"
+        "OwnerKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_740BB85F273E95B4892C478F7D0C40D7"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_740BB85F273E95B4892C478F7D0C40D7"
-        "OwnerKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -261,6 +237,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_899589B5E6F858F194BC3E55E41ACCDF"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_899589B5E6F858F194BC3E55E41ACCDF"
+        "OwnerKey" = "8:_A79F27C7FECACFDA30CA59542BEB028E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_899589B5E6F858F194BC3E55E41ACCDF"
+        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_904D33E35FD8A300C2BA7EBA723B054B"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
@@ -279,7 +273,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9BB89DD0976679920DD49E43399A954D"
+        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A444214C98073307C2495A665C4E21D7"
+        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A79F27C7FECACFDA30CA59542BEB028E"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -309,18 +315,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BD8CE8B811F7ECD27FBE50857D8E7001"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BD8CE8B811F7ECD27FBE50857D8E7001"
-        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_BF9F96EB62B557860813EAE20D958A8C"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
@@ -333,7 +327,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
+        "MsmKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
+        "OwnerKey" = "8:_31464B1C79A5C98FC5DB49B043624F97"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
         "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -358,13 +358,13 @@
         "Entry"
         {
         "MsmKey" = "8:_D1762FCA5C9F5B319B5E15381095C5C6"
-        "OwnerKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
+        "OwnerKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D1762FCA5C9F5B319B5E15381095C5C6"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -388,13 +388,13 @@
         "Entry"
         {
         "MsmKey" = "8:_D694164D5415DF7EF75D25EC320789E6"
-        "OwnerKey" = "8:_641819A31FC591E2AE5D01A0D7E2117F"
+        "OwnerKey" = "8:_C6288D032AB5558AD52B2261E14FC96C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_D694164D5415DF7EF75D25EC320789E6"
-        "OwnerKey" = "8:_C2588D6434522B0400D5F5F1A32925E9"
+        "OwnerKey" = "8:_9BB89DD0976679920DD49E43399A954D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -448,19 +448,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_72EF2F5A0665BC050716AF34AC3B6ABA"
+        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BD8CE8B811F7ECD27FBE50857D8E7001"
+        "OwnerKey" = "8:_A79F27C7FECACFDA30CA59542BEB028E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6AB25568115FA71927006595A15B047C"
+        "OwnerKey" = "8:_31464B1C79A5C98FC5DB49B043624F97"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -472,7 +472,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_58E13EB3B7EC45F68A486CD88449B58C"
+        "OwnerKey" = "8:_899589B5E6F858F194BC3E55E41ACCDF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1116,6 +1116,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_31464B1C79A5C98FC5DB49B043624F97"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Sockets.Plugin, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_31464B1C79A5C98FC5DB49B043624F97"
+                    {
+                    "Name" = "8:Sockets.Plugin.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Sockets.Plugin.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4BA93C8B25556F3FB5BDEAF3E4A83259"
             {
             "AssemblyRegister" = "3:1"
@@ -1457,37 +1488,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_641819A31FC591E2AE5D01A0D7E2117F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Sockets.Plugin.Abstractions, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_641819A31FC591E2AE5D01A0D7E2117F"
-                    {
-                    "Name" = "8:Sockets.Plugin.Abstractions.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Sockets.Plugin.Abstractions.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_64FA2FB16CE2FE4A9074169F40755177"
             {
             "AssemblyRegister" = "3:1"
@@ -1550,37 +1550,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6AB25568115FA71927006595A15B047C"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=5ae7acfde823ed00, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_6AB25568115FA71927006595A15B047C"
-                    {
-                    "Name" = "8:SyslogNet.Client.Core.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SyslogNet.Client.Core.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6DA44DD330A2A844792021D44026BCD5"
             {
             "AssemblyRegister" = "3:1"
@@ -1595,37 +1564,6 @@
                     }
                 }
             "SourcePath" = "8:System.Dynamic.Runtime.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_72EF2F5A0665BC050716AF34AC3B6ABA"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Serialization, Version=0.4.0.0, Culture=neutral, PublicKeyToken=5ae7acfde823ed00, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_72EF2F5A0665BC050716AF34AC3B6ABA"
-                    {
-                    "Name" = "8:SyslogNet.Client.Serialization.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:SyslogNet.Client.Serialization.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
@@ -1922,6 +1860,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_899589B5E6F858F194BC3E55E41ACCDF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Core, Version=0.4.0.0, Culture=neutral, PublicKeyToken=5ae7acfde823ed00, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_899589B5E6F858F194BC3E55E41ACCDF"
+                    {
+                    "Name" = "8:SyslogNet.Client.Core.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SyslogNet.Client.Core.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_904D33E35FD8A300C2BA7EBA723B054B"
             {
             "AssemblyRegister" = "3:1"
@@ -2015,6 +1984,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9BB89DD0976679920DD49E43399A954D"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Transport, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_9BB89DD0976679920DD49E43399A954D"
+                    {
+                    "Name" = "8:SyslogNet.Client.Transport.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SyslogNet.Client.Transport.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A444214C98073307C2495A665C4E21D7"
             {
             "AssemblyRegister" = "3:1"
@@ -2029,6 +2029,37 @@
                     }
                 }
             "SourcePath" = "8:System.Runtime.InteropServices.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A79F27C7FECACFDA30CA59542BEB028E"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Serialization, Version=0.4.0.0, Culture=neutral, PublicKeyToken=5ae7acfde823ed00, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_A79F27C7FECACFDA30CA59542BEB028E"
+                    {
+                    "Name" = "8:SyslogNet.Client.Serialization.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:SyslogNet.Client.Serialization.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
@@ -2170,37 +2201,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BD8CE8B811F7ECD27FBE50857D8E7001"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Sockets.Plugin, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_BD8CE8B811F7ECD27FBE50857D8E7001"
-                    {
-                    "Name" = "8:Sockets.Plugin.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Sockets.Plugin.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BF9F96EB62B557860813EAE20D958A8C"
             {
             "AssemblyRegister" = "3:1"
@@ -2263,20 +2263,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C2588D6434522B0400D5F5F1A32925E9"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C6288D032AB5558AD52B2261E14FC96C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SyslogNet.Client.Transport, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Sockets.Plugin.Abstractions, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C2588D6434522B0400D5F5F1A32925E9"
+                    "_C6288D032AB5558AD52B2261E14FC96C"
                     {
-                    "Name" = "8:SyslogNet.Client.Transport.dll"
+                    "Name" = "8:Sockets.Plugin.Abstractions.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:SyslogNet.Client.Transport.dll"
+            "SourcePath" = "8:Sockets.Plugin.Abstractions.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
@@ -2796,13 +2796,13 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:HyunDai Security Log Sender"
         "ProductCode" = "8:{64B6526F-D7CB-4F2C-A911-CB2591B6E2C7}"
-        "PackageCode" = "8:{5EE2D7D3-9107-485C-958E-68B41FD15532}"
+        "PackageCode" = "8:{6F1A779B-E167-47BC-A359-B0C955BF7ACD}"
         "UpgradeCode" = "8:{C31A4CBE-A352-4349-B1D0-4F7FB71EFC6D}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
-        "InstallAllUsers" = "11:FALSE"
+        "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:HyunDai Software"
         "ARPHELPTELEPHONE" = "8:"
@@ -2935,7 +2935,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_9478B51BE8E742FFB928E99B9A6C22F9"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:진행률"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminProgressDlg.wid"
@@ -2979,7 +2979,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_0F50EC18485D4A5A940518BAD6D7A319"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:설치 확인"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdConfirmDlg.wid"
@@ -3001,7 +3001,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6D85CF80B99448918543841EE8F5706D"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:설치 폴더"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFolderDlg.wid"
@@ -3036,7 +3036,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_8BD4C75A8BE3463DAE531DBA13793FBA"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:환영"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdWelcomeDlg.wid"
@@ -3093,7 +3093,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4429F521FCB847B2AD0C015764494321"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:환영"
+                    "DisplayName" = "8:Welcome"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminWelcomeDlg.wid"
@@ -3141,7 +3141,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_4F7E4AA2D6504053AB83B865D85F8F6A"
                     {
                     "Sequence" = "3:300"
-                    "DisplayName" = "8:설치 확인"
+                    "DisplayName" = "8:Confirm Installation"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminConfirmDlg.wid"
@@ -3163,7 +3163,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_781D3456F37F41108790E50EA535DB60"
                     {
                     "Sequence" = "3:200"
-                    "DisplayName" = "8:설치 폴더"
+                    "DisplayName" = "8:Installation Folder"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFolderDlg.wid"
@@ -3200,7 +3200,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_6168A2D6DDB942E0BA7FA44EDFF6AD7D"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:진행률"
+                    "DisplayName" = "8:Progress"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdProgressDlg.wid"
@@ -3244,7 +3244,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_97C9E7F5E3CA4E2E8E222D208A43C2BC"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:마침"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdFinishedDlg.wid"
@@ -3288,7 +3288,7 @@
                     "{688940B3-5CA9-4162-8DEE-2993FA9D8CBC}:_45CCE4A242E74F1EBEBCC140FBE805A4"
                     {
                     "Sequence" = "3:100"
-                    "DisplayName" = "8:마침"
+                    "DisplayName" = "8:Finished"
                     "UseDynamicProperties" = "11:TRUE"
                     "IsDependency" = "11:FALSE"
                     "SourcePath" = "8:<VsdDialogDir>\\VsdAdminFinishedDlg.wid"
@@ -3317,7 +3317,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_58E13EB3B7EC45F68A486CD88449B58C"
             {
-            "SourcePath" = "8:\\\\Mac\\Home\\Desktop\\c_#\\src\\HyunDaiSecurityAgent\\HyunDaiSecurityAgent\\obj\\Release\\HyunDaiSecurityAgent.exe"
+            "SourcePath" = "8:..\\HyunDaiSecurityAgent\\obj\\Release\\HyunDaiSecurityAgent.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_0EDF4334988C4319A47072BECC88D747"
