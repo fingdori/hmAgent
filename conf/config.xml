@@ -1,16 +1,8 @@
 <config>
-  <server-ip>
-    192.168.1.200
-  </server-ip>
+  <server-ip>52.78.153.126</server-ip>
   <ports>
-    <log-on-log-port>
-      9999
-    </log-on-log-port>
-    <log-off-log-port>
-      9998
-    </log-off-log-port>
-    <ip-change-log-port>
-      9997
-    </ip-change-log-port>
+    <log-on-log-port>10000</log-on-log-port>
+    <log-off-log-port>10000</log-off-log-port>
+    <ip-change-log-port>10000</ip-change-log-port>
   </ports>
 </config>
