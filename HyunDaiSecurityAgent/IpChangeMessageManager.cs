@@ -13,14 +13,12 @@ namespace HyunDaiSecurityAgent
         //IpChanged|ip=(공백)mac=(공백)hostname=(공백)currentSystemTime= 
         public override string makeMessage(string xmlString)
         {
+            CommonMessageManager commonMessageManager = new CommonMessageManager(getDelemiter());
             StringBuilder sb = new StringBuilder();
             XmlDocument xd = new XmlDocument();
             xd.LoadXml(xmlString);
             sb.Append("UUID=" + ConfigManager.Uuid + LogTypeDelimeter + LogTypeIpChange + LogTypeDelimeter);
-            sb.Append(addSingleNodeInnerText("ip", xd));
-            sb.Append(addSingleNodeInnerText("mac", xd));
-            sb.Append(addSingleNodeInnerText("hostname", xd));
-            sb.Append(addSingleNodeInnerText("currentSystemTime", xd));
+            sb.Append(commonMessageManager.makeMessage(null) + getDelemiter());
             sb.Remove(sb.Length-1, 1);
 
             return sb.ToString();

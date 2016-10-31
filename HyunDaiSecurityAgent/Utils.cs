@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Reflection;
+using System.Text;
 using System.Xml;
 
 
@@ -54,40 +55,6 @@ namespace HyunDaiSecurityAgent
             }
 
             return xmlNodeUuid.InnerText.Replace("\r\n", "").Trim();
-        }
-
-        public static String getActiveIps() {
-            
-            NetworkInterface[] nts = NetworkInterface.GetAllNetworkInterfaces();
-            DateTime now = DateTime.UtcNow;
-            String ipAddress = "";
-            int retryCount = 0;
-
-            // 최대 1000번의 retry를 1초 간격으로 실시
-            while (ipAddress.Equals("") || retryCount > RetryCountMax) {
-                foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
-                {
-                    if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 || ni.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
-                    {
-                        foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
-                        {
-                            if (ip.Address.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                            {
-                                if (!ipAddress.Equals(""))
-                                {
-                                    ipAddress += ",";
-                                }
-                                ipAddress += ip.Address.ToString();
-                            }                   
-                        }
-                    }
-                }
-                System.Threading.Thread.Sleep(SleepDuration);
-                retryCount++;
-            }
-            _localLog.WriteEntry("retryCount : " + --retryCount, EventLogEntryType.Information);
-
-            return ipAddress;
         }
     }
 }
