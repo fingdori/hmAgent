@@ -79,8 +79,11 @@ namespace HyunDaiSecurityAgent
                 System.Threading.Thread.Sleep(SleepDuration);
                 retryCount++;
             }
-            _localLog.WriteEntry("retryCount : " + --retryCount, EventLogEntryType.Information);
 
+            if (retryCount > RetryCountMax) {
+                _localLog.WriteEntry("network interface access retryCount over 1000!", EventLogEntryType.Information);
+            }
+            
             StringBuilder sb = new StringBuilder();
 
             sb.Append("IpAddress=\"" + ipAddress + "\"");
