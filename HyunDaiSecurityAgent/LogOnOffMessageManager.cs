@@ -55,13 +55,10 @@ namespace HyunDaiSecurityAgent
                         sb.Append(addSingleNodeAttributeValue("TimeCreated", "TimeCreated", "SystemTime", xd));
                         sb.Append(addSingleNodeInnerText("EventRecordID", xd));
                         sb.Append(addSingleNodeAttributeValue("ProcessID", "Execution", "ProcessID", xd));
-                        sb.Append(addSingleNodeInnerText("Computer", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("SubjectUserSid", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("SubjectUserName", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("SubjectDomainName", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("TargetUserSid", xd));
-                        sb.Append(addDataElementValueMatchNameAttribute("TargetUserName", xd));
-                        sb.Append(addDataElementValueMatchNameAttribute("TargetDomainName", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("TargetLogonId", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("WorkstationName", xd));
                         sb.Append(addDataElementValueMatchNameAttribute("LogonGuid", xd));
